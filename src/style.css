@@ -1,67 +1,74 @@
-@import 'normalize.css';
+@import '/node_modules/normalize.css/normalize.css';
 
 body {
-  margin: 0 auto;
-  box-sizing: border-box;
-  max-width: 1200px;
-
-  --blue-color: #00acdc;
+  --turquoise: #00acdc;
 }
 
-header {
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding-right: 50px;
   padding-left: 50px;
 }
 
-.heder-logo {
-  display: inline-block;
+.header-logo-link {
   padding: 10px 0;
 }
 
-img {
+.header-img-logo {
   display: block;
 }
 
-nav {
-  float: right;
-  padding: 20px 0;
+.header-nav-list {
+  display: flex;
+  margin: 0;
+  padding-left: 0;
 }
 
-ul > :nth-child(n + 2) {
-  padding-left: 16px;
+.header-nav-list > :nth-child(n + 2) {
+  margin-left: 20px;
 }
 
-li {
-  display: inline-block;
+.header-nav-item {
+  list-style-type: none;
 }
 
-.nav-link {
+.header-nav-link {
   padding-top: 22px;
   padding-bottom: 23px;
   color: rgb(0, 0, 0);
-  font-family: Roboto, sans-serif;
+  font-family:
+    Roboto,
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Arial,
+    sans-serif;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0;
   text-transform: uppercase;
   text-decoration: none;
+  position: relative;
 }
 
 .is-active::after {
   content: '';
   display: block;
-  min-width: 36px;
-  min-height: 4px;
-  position: relative;
-  bottom: -20px;
-  background-color: var(--blue-color);
+  width: 36px;
+  height: 4px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: var(--turquoise);
   border-radius: 8px;
 }
 
-a:hover {
-  color: var(--blue-color);
+a[class*='is-act'] {
+  color: var(--turquoise);
 }
 
-a[class*='is-act'] {
-  color: var(--blue-color);
+a:hover {
+  color: var(--turquoise);
 }
